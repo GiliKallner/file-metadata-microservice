@@ -10,12 +10,10 @@ router.get("/", function (request, response) {
   response.sendFile(path.join('/app/views/index.html'));
 });
 
-router.Promise = global.Promise;
-
-router.post('/', upload.single('myfile'), function (req, res) {
-    console.log('body: ',req.body);
-    console.log('files: ',req.file);
-    res.send('');
+router.post('/file', upload.single('myfile'), (req, res) =>{
+    
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({size:req.file.size},null,3));
 });
 
 module.exports = router;
