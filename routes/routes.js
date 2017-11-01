@@ -11,9 +11,9 @@ router.get("/", function (request, response) {
 });
 
  
-router.post('/file', upload.single('upload_file'), function (req, res, next) {
+router.post('/file', upload.single('myfile'), function (req, res, next) {
     console.log('body: ',req.body);
-    console.log('files: ',req.files);
+    console.log('files: ',req.file);
     res.end();
 });
 
