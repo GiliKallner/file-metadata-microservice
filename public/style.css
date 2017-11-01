@@ -1,0 +1,29 @@
+
+body{
+  overflow:hidden !important;
+}
+.shortenedUrl{
+  visibility:hidden;
+}
+form>input[type=text]{
+  margin:0 !important;
+  width:60% !important;
+}
+form>input[type=text]:focus{
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #ef9a9a !important;
+  box-shadow: 0 1px 0 0 #ef9a9a !important;
+ 
+}
+
+.container{
+  padding-top:8% !important;
+}
+
+input[type=text].hidden_text{
+opacity:0;
+}
+
+footer{
+  padding:2em;
+}
