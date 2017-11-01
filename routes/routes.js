@@ -1,9 +1,9 @@
 const express = require('express');
+const path = require('path');
 
 const multer  = require('multer');
-const upload = multer({ dest: 'uploads/' })
+const upload = multer();
 const router = express.Router();
-const path = require('path');
 
 
 router.get("/", function (request, response) {
@@ -11,11 +11,10 @@ router.get("/", function (request, response) {
 });
 
  
-router.post('/file', upload.single('file'), function (req, res, next) {
-  console.log('body: ',req.body);
-  console.log('files: ',req.files);
-  res.end();
-  // req.body contains the text fields 
-})
+router.post('/file', upload.single('upload_file'), function (req, res, next) {
+    console.log('body: ',req.body);
+    console.log('files: ',req.files);
+    res.end();
+});
 
 module.exports = router;
