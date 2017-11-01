@@ -13,6 +13,7 @@ router.get("/", function (request, response) {
 router.post('/file',upload.single('avatar'), (req,res)=>{
     console.log('body: ',req.body);
     console.log('files: ',req.files);
+  res.end();
 });
 
 module.exports = router;
